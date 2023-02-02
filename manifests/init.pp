@@ -50,7 +50,7 @@
 #   Defaults to stable.
 #
 # @param repo_gpg_key_url When using 'repo' install_method, the repo_gpg_key_url to look for the gpg signing key of the repo.
-#   Defaults to https://packages.grafana.com/gpg.key.
+#   Defaults to https://rpm.grafana.com/gpg.key.
 #
 # @param repo_key_id When using 'repo' install_method, the repo_key_id of the repo_gpg_key_url key on Debian based systems.
 #   Defaults to 4E40DDF6D76E284A4A6780E48C8C34C524098CB6.
@@ -152,7 +152,7 @@ class grafana (
   String[1] $toml_package_name,
   String[1] $toml_package_ensure,
   Optional[String[1]] $toml_package_provider,
-  Stdlib::HTTPUrl $repo_gpg_key_url = 'https://packages.grafana.com/gpg.key',
+  Stdlib::HTTPUrl $repo_gpg_key_url = 'https://rpm.grafana.com/gpg.key',
 ) {
   contain grafana::install
   contain grafana::config
